@@ -5,7 +5,8 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: nginx
+      image: nginx:latest
+      imagePullPolicy: always
       env: 
       - name: COURSE
         valueFrom: 
