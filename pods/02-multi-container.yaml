@@ -7,7 +7,7 @@ spec:
    - name: nginx
      image: nginx
    - name: sidecar
-     image: almalinux
+     image: almalinux:8 
 
     
 
