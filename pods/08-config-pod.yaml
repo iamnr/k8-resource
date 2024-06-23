@@ -9,6 +9,6 @@ spec:
       env: 
       - name: COURSE
         valueFrom: 
-          configmapKeyRef: 
+          configMapKeyRef: 
             name: course-config
             key: COURSE
