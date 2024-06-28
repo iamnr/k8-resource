@@ -23,22 +23,22 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: hello-deployment
   labels:
-    app: nginx
+    app: hello-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: hello-pod
   template:
     metadata:
-      name: nginx
+      name: hello-pod
       labels:
-        app: nginx
+        app: hello-pod
     spec:
       containers:
-        - name: nginx
+        - name: hello-world
           image: nginx
           ports:
             - containerPort: 80
@@ -55,11 +55,9 @@ spec:
               subPath: filebeat.yml 
       volumes:
         - name: nginx-logs
-          emptyDir: {}
         - name: filebeat-config
           configMap:
             name: filebeat-configmap
             items:
               - key: filebeat.yml
                 path: filebeat.yml
-        
