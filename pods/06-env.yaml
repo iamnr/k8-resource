@@ -1,13 +1,16 @@
 apiVersion: v1
 kind: Pod
-metadata:
-  name: envar-demo
+metadata: 
+  name: env-example
 spec:
   containers:
-  - name: envar-demo-container
-    image: nginx
-    env:
-    - name: DEMO_GREETING
-      value: "Hello from the environment"
-    - name: DEMO_FAREWELL
-      value: "Such a sweet sorrow"
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      env: 
+      - name: test1
+        value: "hello there"
+
+      - name: test2
+        value: "How are you?" 
