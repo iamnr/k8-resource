@@ -27,3 +27,4 @@ spec:
       port: 80
       protocol: TCP
       targetPort: http-web-svc
+      nodePort: 30000
