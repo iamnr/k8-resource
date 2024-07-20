@@ -11,6 +11,6 @@ spec:
       env:
         - name: test1
           valueFrom:
-            configmapkeyref:
+            configMapKeyRef:
               name: configmap-ref
               key: test1
