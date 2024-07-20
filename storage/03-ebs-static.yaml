@@ -24,18 +24,6 @@ spec:
     requests:
       storage: 3Gi
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: ebs-static-pvc
-spec:
-  storageClassName: ""
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 3Gi
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -67,4 +55,4 @@ spec:
       volumes:
       - name: nginx-html
         persistentVolumeClaim: # this is the PVC
-          claimName: ebs-static-pvc
+          claimName: ebs-static-pvc-claim
