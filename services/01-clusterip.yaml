@@ -24,6 +24,6 @@ spec:
     app: frontend
   ports:  
   - name: service-port
-    protocol: tcp
+    protocol: TCP
     port: 80
     targetPort: http-web-svc
