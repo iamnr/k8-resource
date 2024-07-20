@@ -1,25 +1,21 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: ReplicaSet
 metadata:
-  name: frontend
-  labels: # these labels are replica set labels, every k8 resource can have labels.
-    app: guestbook
+  name: frontend-replica
+  labels:
+    environment: dev
     tier: frontend
 spec:
-  # modify replicas according to your case
   replicas: 3
   selector:
-    matchLabels: # these labels should match with pod labels
-      tier: frontend
-      app: nginx
-      environment: dev
-  template: # this one is nothing but pod definition.
+    environment: dev
+    tier: frontend
+  template:
     metadata:
-      labels: #these are the pod labels.
-        tier: frontend
-        app: nginx
-        environment: dev
+      environment: dev
+      tier: frontend
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+       - name: nginx
+         image: nginx:latest
+  
