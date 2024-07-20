@@ -35,11 +35,13 @@ spec:
   selector: 
     matchLabels:  
       app: nginx 
+      project: roboshop
       component: frontend
   template:
     metadata:
       labels:
         app: nginx
+        project: roboshop
         component: frontend
     spec:
       containers:
