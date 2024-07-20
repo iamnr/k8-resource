@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx
-  labels:
-    environment: Dev
-    app: front-end
+  labels: 
+    environment: dev
+    tier: frontend
 spec:
   containers:
-    - name: nginx
-      image: nginx
-      ports: 
+  - name: nginx
+    image: nginx:latest
+    ports:  
       - containerPort: 80
         name: http-web-svc
 ---
@@ -18,12 +18,12 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: NodePort
+  type: nodeport
   selector:
-    environment: Dev
-    app: front-end
+    environment: dev
+    tier: frontend
   ports:
-    - name: name-of-service-port
+    - name: service-port
       port: 80
       protocol: TCP
       targetPort: http-web-svc
