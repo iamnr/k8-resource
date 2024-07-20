@@ -9,8 +9,8 @@ spec:
       ports:
         - containerPort: 80
       env:
-        - name: test1
+        - name: test2
           valueFrom:
             configMapKeyRef:
               name: configmap-ref
-              key: test1
+              key: test2
