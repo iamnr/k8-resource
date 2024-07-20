@@ -3,27 +3,26 @@ kind: Pod
 metadata:
   name: nginx
   labels:
-    environment: Dev
-    app: front-end
+    environment: dev
+    tier: frontend
 spec:
-  containers:
-    - name: nginx
-      image: nginx
-      ports: 
+  - name: nginx
+    image: nginx:latest
+    ports:
       - containerPort: 80
         name: http-web-svc
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx-loadbalancer
 spec:
-  type: LoadBalancer
+  type: LoadBalancer 
   selector:
-    environment: Dev
-    app: front-end
+    environment: dev
+    tier: frontend
   ports:
-    - name: name-of-service-port
+    - name: loadbalancer-port
       port: 80
       protocol: TCP
       targetPort: http-web-svc
