@@ -6,6 +6,11 @@ metadata:
     environment: dev
     tier: frontend
 spec:
+  replicas: 3
+  selector:
+    matchlabels: 
+     environment: dev
+     tier: frontend
   template:
     metadata:
       labels:
@@ -15,8 +20,4 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
-  replicas: 3
-  selector:
-    matchlabels: 
-     environment: dev
-     tier: frontend 
+  
