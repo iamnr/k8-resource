@@ -9,5 +9,5 @@ spec:
     fsType: xfs
     volumeID: vol-0c7f148dfda27cab3
   capacity:
-    storage: 5Gi
+    storage: 20Gi
   
