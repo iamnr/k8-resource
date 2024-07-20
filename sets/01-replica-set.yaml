@@ -8,8 +8,9 @@ metadata:
 spec:
   replicas: 3
   selector:
-    environment: dev
-    tier: frontend
+    matchlabels:
+     environment: dev
+     tier: frontend
   template:
     metadata:
       environment: dev
