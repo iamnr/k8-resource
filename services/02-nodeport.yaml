@@ -18,7 +18,7 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: nodeport
+  type: NodePort
   selector:
     environment: dev
     tier: frontend
