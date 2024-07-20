@@ -34,24 +34,22 @@ spec:
   replicas: 3
   selector: 
     matchLabels:  
-      app: nginx
-      project: roboshop 
+      app: nginx 
       component: frontend
   template:
     metadata:
       labels:
         app: nginx
-        project: roboshop
         component: frontend
     spec:
       containers:
-        - name: nginx 
+      - name: nginx 
           image: nginx:latest
           ports:
-            - containerPort: 80
-          volumeMounts:
-            - mountPath: "/usr/share/nginx/html"
-              name: nginx-html
+          - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-html
       volumes:
         - name: nginx-html
           PersistentVolumeClaim: 
