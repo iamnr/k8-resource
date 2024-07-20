@@ -1,9 +1,7 @@
-apiVersion: v2
-kind: configmap
+apiVersion: v1
+kind: ConfigMap
 metadata: 
  name: configmap-ref
 data:
-  - name: test1
-    value: "hello"
-  - name: test2
-    value: "there"
+    test1: Hello 
+    test2: How are you
