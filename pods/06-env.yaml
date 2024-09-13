@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: environment
+  name: environment_test
 spec:
   containers:
   - name: nginx
@@ -9,4 +9,7 @@ spec:
     ports:
     - containerPort: 80
     env: 
-    - name: 
+    - name: Demo_Greeting
+      value: "hello world"
+    - name: Demo_Farewell
+      value: "bye bye"
