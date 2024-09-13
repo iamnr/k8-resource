@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata: 
- name: configmap-ref
-data:
-    test1: Hello 
-    test2: How are you
